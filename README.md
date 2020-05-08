@@ -1,27 +1,18 @@
-# Svelte Example
+# Readme
 
-This directory is a brief example of a [Svelte](https://svelte.dev/) app with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction) that can be deployed with Vercel and zero configuration.
+Hasil belajar dari [freeCodeCamp.com](https://www.youtube.com/watch?v=ujbE0mzX-CU/) dengan instruktur om Noah dari [phptuts](https://github.com/phptuts)
 
-## Deploy Your Own
+## Menjalankan Aplikasi
 
-Deploy your own Svelte project, along with Serverless Functions, with Vercel.
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/zeit/now/tree/master/examples/svelte)
-
-_Live Example: https://svelte.now-examples.now.sh_
-
-### How We Created This Example
-
-To get started with Svelte, along with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction), deployed with Vercel, you can use [degit](https://github.com/Rich-Harris/degit) to initialize the project:
-
-```shell
-$ npx degit sveltejs/template my-svelte-project
+```shell script
+$ npm install
+$ npm run dev
 ```
 
-### Deploying From Your Terminal
+## Open API JDS
 
-You can deploy your new Svelte project, along with [Serverless Functions](https://vercel.com/docs/v2/serverless-functions/introduction), with a single command from your terminal using [Now CLI](https://vercel.com/download):
-
-```shell
-$ now
+```shell script
+https://covid19-public.digitalservice.id/api/v1/
 ```
+
+Untuk melihat open api klik [disini](https://covid19-public.digitalservice.id/api/v1/).
