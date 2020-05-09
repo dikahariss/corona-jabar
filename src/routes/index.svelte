@@ -7,7 +7,10 @@
 
             return { jabarStats };
         } catch (e) {
-
+            this.error(
+                500,
+                "There was an error in calling the api please try agai in 5 minutes."
+            );
         }
     }
 </script>
@@ -17,7 +20,6 @@
     import TableContainer from "../components/TableContainer.svelte";
 
     export let jabarStats;
-    console.log(jabarStats);
 </script>
 
 <svelte:head>
