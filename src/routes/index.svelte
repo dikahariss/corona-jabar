@@ -30,7 +30,7 @@
     </div>
 </div>
 
-<CovidStat/>
+<CovidStat {...jabarStats}/>
 
 <CovidChart/>
 
