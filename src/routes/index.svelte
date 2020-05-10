@@ -36,6 +36,6 @@
 
 <CovidStat {...jabarStats}/>
 
-<CovidChart dataRekap={rekapJabar} title="Corona Jabar"/>
+<CovidChart dataRekap={rekapJabar} title="Dashboard Kasus COVID-19 Provinsi Jawa Barat"/>
 
 <TableContainer/>
