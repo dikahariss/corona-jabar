@@ -5,8 +5,9 @@
         try {
             const jabarStats = await requests.jabarStats();
             const rekapJabar = await requests.rekapJabar();
+            const kabkotData = await requests.kabkotData();
 
-            return { jabarStats, rekapJabar };
+            return { jabarStats, rekapJabar, kabkotData };
         } catch (e) {
             this.error(
                 500,
@@ -22,6 +23,7 @@
 
     export let jabarStats;
     export let rekapJabar;
+    export let kabkotData;
 </script>
 
 <svelte:head>
@@ -38,4 +40,4 @@
 
 <CovidChart dataRekap={rekapJabar} title="Dashboard Kasus COVID-19 Provinsi Jawa Barat"/>
 
-<TableContainer/>
+<TableContainer data={kabkotData}/>

@@ -17,6 +17,14 @@ async function kabkotStats(kabkot) {
     return parsers.kabkotStats(kabkot, response.data.data.content);
 }
 
+async function kabkotData() {
+    const response = await axios.get(
+        'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar?level=kab'
+    );
+
+    return parsers.kabkotTable(response.data.data.content);
+}
+
 async function rekapJabar() {
     const response = await axios.get(
         'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar/harian?level=prov'
@@ -38,4 +46,5 @@ export default {
     kabkotStats,
     rekapJabar,
     rekapKabkot,
+    kabkotData,
 };

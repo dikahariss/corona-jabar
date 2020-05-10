@@ -83,9 +83,23 @@ function parseStats(rawStats) {
     };
 }
 
+function kabkotTable(kabkotData) {
+    return kabkotData.map(data => {
+        return {
+            positif: format.number(data.positif),
+            sembuh: format.number(data.sembuh),
+            meninggal: format.number(data.meninggal),
+            perawatan: format.number(data.positif - (data.sembuh + data.meninggal)),
+            kode_kab: data.kode_kab,
+            nama_kab: data.nama_kab,
+        };
+    });
+}
+
 export default {
     jabarStats,
     kabkotStats,
     rekapJabar,
     rekapKabkot,
+    kabkotTable,
 };
