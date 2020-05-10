@@ -32,13 +32,13 @@
             },
             options: {
                 responsive: true,
-                tooltip: {
+                tooltips: {
                     callbacks: {
-                        labels: function (tooltopItem, data) {
-                            let label = data.datasets[tooltopItem.datasetIndex].labels;
+                        label: function (tooltipItem, data) {
+                            let label = data.datasets[tooltipItem.datasetIndex].label;
 
                             label += ": ";
-                            label += tooltopItem.yLabel.toLocaleString();
+                            label += tooltipItem.yLabel.toLocaleString();
 
                             return label;
                         }
