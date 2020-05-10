@@ -1,16 +1,18 @@
 <script context="module">
     import kabkotJabar from '../data/kabkotJabar';
+    import requests from '../data/requests';
 
     export async function preload(page) {
         const state = page.params["state"];
 
         if (kabkotJabar.find(s => s.kode_bps === parseInt(state)) === undefined) {
-            this.error(404, "State Not Found");
+            this.error(404, "Kabupaten / Kota tidak Terdaftar!");
             return;
         }
         const nama_wilayah = kabkotJabar.find(s => s.kode_bps === parseInt(state)).nama_wilayah;
         try {
-            return { state: state, nama_wilayah };
+            const kabkotStats = await requests.kabkotStats(state);
+            return { state: state, nama_wilayah, kabkotStats };
         } catch (e) {
             this.error(
                 500,
@@ -27,7 +29,7 @@
 
     export let state;
     export let nama_wilayah;
-
+    export let kabkotStats;
 </script>
 
 <svelte:head>
@@ -40,6 +42,6 @@
     </div>
 </div>
 
-<CovidStat/>
+<CovidStat {...kabkotStats}/>
 
 <CovidChart/>
