@@ -22,7 +22,6 @@
 
     export let jabarStats;
     export let rekapJabar;
-    console.log(rekapJabar);
 </script>
 
 <svelte:head>
@@ -37,6 +36,6 @@
 
 <CovidStat {...jabarStats}/>
 
-<CovidChart/>
+<CovidChart dataRekap={rekapJabar} title="Corona Jabar"/>
 
 <TableContainer/>

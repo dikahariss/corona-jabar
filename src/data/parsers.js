@@ -11,19 +11,19 @@ function jabarStats(data) {
 function rekapJabar(data) {
     return [
         {
-            label: 'Kasus',
+            label: 'Terkonfirmasi',
             key: 'positif',
-            color: 'rgb(100, 0, 200)'
+            color: 'rgb(239, 100, 100)'
         },
         {
             label: 'Sembuh',
             key: 'sembuh',
-            color: 'rgb(100, 100, 200)'
+            color: 'rgb(59, 180, 110)'
         },
         {
             label: 'Meninggal',
             key: 'meninggal',
-            color: 'rgb(10, 30, 100)'
+            color: 'rgb(239, 169, 101)'
         }
     ].reduce((prev, next) => {
         if (data.filter(d => d[next.key] !== null).length > 4) {
