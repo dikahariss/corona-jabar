@@ -12,7 +12,8 @@
         const nama_wilayah = kabkotJabar.find(s => s.kode_bps === parseInt(state)).nama_wilayah;
         try {
             const kabkotStats = await requests.kabkotStats(state);
-            return { state: state, nama_wilayah, kabkotStats };
+            const rekapKabkot = await requests.rekapKabkot(state);
+            return { state: state, nama_wilayah, kabkotStats, rekapKabkot };
         } catch (e) {
             this.error(
                 500,
@@ -30,6 +31,7 @@
     export let state;
     export let nama_wilayah;
     export let kabkotStats;
+    export let rekapKabkot;
 </script>
 
 <svelte:head>
@@ -44,4 +46,4 @@
 
 <CovidStat {...kabkotStats}/>
 
-<CovidChart/>
+<CovidChart dataRekap={rekapKabkot} title="Dashboard Kasus COVID-19 {nama_wilayah}"/>

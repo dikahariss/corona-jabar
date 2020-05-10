@@ -8,7 +8,19 @@ function jabarStats(data) {
 
 }
 
-function rekapJabar(data) {
+function rekapJabar(dataRekap) {
+    return parseRekap(dataRekap);
+}
+
+function rekapKabkot(kabkot, dataRekap) {
+    const kabkotRekap = dataRekap.filter(
+        d => d.kode_kab === kabkot
+    );
+
+    return parseRekap(kabkotRekap);
+}
+
+function parseRekap(dataRekap) {
     return [
         {
             label: 'Terkonfirmasi',
@@ -26,8 +38,8 @@ function rekapJabar(data) {
             color: 'rgb(239, 169, 101)'
         }
     ].reduce((prev, next) => {
-        if (data.filter(d => d[next.key] !== null).length > 4) {
-            prev.push(parseChart(data, next.key, next.label, next.color));
+        if (dataRekap.filter(d => d[next.key] !== null).length > 4) {
+            prev.push(parseChart(dataRekap, next.key, next.label, next.color));
         }
 
         return prev;
@@ -75,4 +87,5 @@ export default {
     jabarStats,
     kabkotStats,
     rekapJabar,
+    rekapKabkot,
 };

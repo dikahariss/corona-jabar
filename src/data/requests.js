@@ -25,8 +25,17 @@ async function rekapJabar() {
     return parsers.rekapJabar(response.data.data.content);
 }
 
+async function rekapKabkot(kabkot) {
+    const response = await axios.get(
+        'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar/harian?level=kab'
+    );
+
+    return parsers.rekapKabkot(kabkot, response.data.data.content);
+}
+
 export default {
     jabarStats,
     kabkotStats,
     rekapJabar,
+    rekapKabkot,
 };
