@@ -1,10 +1,53 @@
 import format from "./format";
+import moment from 'moment';
 
 function jabarStats(data) {
     const jabarStatRaw = data;
 
     return parseStats(jabarStatRaw);
 
+}
+
+function rekapJabar(data) {
+    return [
+        {
+            label: 'Terkonfirmasi',
+            key: 'positif',
+            color: 'rgb(239, 100, 100)'
+        },
+        {
+            label: 'Sembuh',
+            key: 'sembuh',
+            color: 'rgb(59, 180, 110)'
+        },
+        {
+            label: 'Meninggal',
+            key: 'meninggal',
+            color: 'rgb(239, 169, 101)'
+        }
+    ].reduce((prev, next) => {
+        if (data.filter(d => d[next.key] !== null).length > 4) {
+            prev.push(parseChart(data, next.key, next.label, next.color));
+        }
+
+        return prev;
+    }, []);
+}
+
+function parseChart(dataRekap, key, label, color) {
+    const chartData = dataRekap.map(data => {
+        return {
+            x: moment(data.tanggal, 'YYYY-MM-DD'),
+            y: data[key]
+        };
+    });
+
+    return {
+        label,
+        data:chartData,
+        fill: false,
+        borderColor: color
+    };
 }
 
 function kabkotStats(kabkot, data) {
@@ -31,4 +74,5 @@ function parseStats(rawStats) {
 export default {
     jabarStats,
     kabkotStats,
+    rekapJabar,
 };

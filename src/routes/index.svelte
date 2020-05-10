@@ -4,8 +4,9 @@
     export async function preload() {
         try {
             const jabarStats = await requests.jabarStats();
+            const rekapJabar = await requests.rekapJabar();
 
-            return { jabarStats };
+            return { jabarStats, rekapJabar };
         } catch (e) {
             this.error(
                 500,
@@ -20,6 +21,7 @@
     import TableContainer from "../components/TableContainer.svelte";
 
     export let jabarStats;
+    export let rekapJabar;
 </script>
 
 <svelte:head>
@@ -34,6 +36,6 @@
 
 <CovidStat {...jabarStats}/>
 
-<CovidChart/>
+<CovidChart dataRekap={rekapJabar} title="Corona Jabar"/>
 
 <TableContainer/>

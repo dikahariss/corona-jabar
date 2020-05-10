@@ -15,8 +15,8 @@
     <div class="container">
         <div class="columns">
             <h2 class="is-3 column">Terkonfirmasi: {positif}</h2>
-            <h2 class="is-3 column">Meninggal: {meninggal}</h2>
             <h2 class="is-3 column">Sembuh: {sembuh}</h2>
+            <h2 class="is-3 column">Meninggal: {meninggal}</h2>
             <h2 class="is-3 column">Perawatan: {perawatan}</h2>
         </div>
     </div>
