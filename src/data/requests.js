@@ -3,7 +3,7 @@ import parsers from "./parsers";
 
 async function jabarStats() {
     const response = await axios.get(
-        'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar'
+        'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar?level=prov'
     );
 
     return parsers.jabarStats(response.data.data.content);
@@ -17,7 +17,16 @@ async function kabkotStats(kabkot) {
     return parsers.kabkotStats(kabkot, response.data.data.content);
 }
 
+async function rekapJabar() {
+    const response = await axios.get(
+        'https://covid19-public.digitalservice.id/api/v1/rekapitulasi/jabar/harian?level=prov'
+    );
+
+    return parsers.rekapJabar(response.data.data.content);
+}
+
 export default {
     jabarStats,
     kabkotStats,
+    rekapJabar,
 };

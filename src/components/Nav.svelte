@@ -21,8 +21,7 @@
 			<img src="logo.jpg" alt="Virus"/>
 		</a>
 
-		<a
-			role="button"
+		<a role="button"
 			class="navbar-burger burger"
 			aria-label="menu"
 			class:is-active={isOpen}
