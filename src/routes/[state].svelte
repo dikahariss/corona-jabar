@@ -28,7 +28,6 @@
     import CovidStat from "../components/CovidStat.svelte";
     import CovidChart from "../components/CovidChart.svelte";
 
-    export let state;
     export let nama_wilayah;
     export let kabkotStats;
     export let rekapKabkot;
