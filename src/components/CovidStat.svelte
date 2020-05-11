@@ -3,6 +3,9 @@
     export let sembuh;
     export let meninggal;
     export let perawatan;
+
+
+
 </script>
 
 <style>

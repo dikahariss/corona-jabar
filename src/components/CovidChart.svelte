@@ -10,6 +10,10 @@
     let chart;
 
     onMount(() => {
+        window.addEventListener('orientationchange', function () {
+            window.location.reload();
+        }, false);
+
         if (dataRekap && document.body.clientWidth > 680) {
             createChart();
             return;

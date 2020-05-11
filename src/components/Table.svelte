@@ -8,6 +8,7 @@
     }
     .section {
         padding: 0.5rem 1.5rem;
+        min-height: 100vh;
     }
 </style>
 
@@ -23,14 +24,14 @@
             </tr>
             </thead>
             <tbody>
-            {#each kabkot as kab (kab.kode_kab)}
+            {#each kabkot as data (data.kode_kab)}
                 <tr>
                     <td>
-                        <a rel="prefetch" href={kab.kode_kab}>{kab.nama_kab}</a>
+                        <a rel="prefetch" href={data.kode_kab}>{data.nama_kab}</a>
                     </td>
-                    <td>{kab.positif}</td>
-                    <td>{kab.sembuh}</td>
-                    <td>{kab.meninggal}</td>
+                    <td>{data.positif}</td>
+                    <td>{data.sembuh}</td>
+                    <td>{data.meninggal}</td>
                 </tr>
             {/each}
             </tbody>

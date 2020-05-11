@@ -34,6 +34,12 @@
     export let rekapKabkot;
 </script>
 
+<style>
+    .header h1 {
+        text-transform: capitalize;
+    }
+</style>
+
 <svelte:head>
     <title>Corona Jabar - {nama_wilayah}</title>
 </svelte:head>
